@@ -1,0 +1,209 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carefree — Best Products to Use During Periods | SakhiCare</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fff0f5, #fff7f7);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 950px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #ff6b81;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+h2 {
+    text-align: center;
+    color: #ff88a2;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+h3 {
+    color: #ff6b81;
+    margin-top: 40px;
+    font-size: 1.3rem;
+}
+p {
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #555;
+}
+
+.tip {
+    background: #fff6f8;
+    border-left: 4px solid #ff6b81;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 10px 0 20px 0;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* Product sections */
+.product {
+    margin-bottom: 40px;
+}
+.product img {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    margin: 20px auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Quote box */
+.quote-box {
+    background: linear-gradient(135deg, #ffe3ec, #fff0f5);
+    border-radius: 16px;
+    padding: 25px;
+    margin-top: 50px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.quote-box p {
+    color: #ff4d6a;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Back button */
+.back-btn {
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0;
+    background-color: #ff6b81;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+.back-btn:hover {
+    background-color: #ff4d6a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Carefree — Best Products to Use During Periods</h1>
+    <h2>💕 Find What Fits You Best, Stay Comfortable & Confident!</h2>
+
+    <p>Taking care of your menstrual hygiene is all about comfort, safety, and confidence. Every woman’s body is different — so choose what feels right for you. 💕</p>
+
+    <p>Here are the most common and trusted menstrual hygiene products you can include in your Carefree kit:</p>
+
+    <!-- 🩸 1️⃣ Sanitary Pads -->
+    <div class="product">
+        <h3>🩸 1️⃣ Sanitary Pads (Napkins)</h3>
+        <img src="{% static 'images/care1.jpg' %}" alt="Sanitary Pads">
+        <p><strong>Best for:</strong> Beginners and regular use.</p>
+        <p><strong>What it is:</strong> Soft absorbent pads worn inside underwear to soak up menstrual flow.</p>
+        <p><strong>Why use it:</strong><br>
+        • Easy to use and available everywhere.<br>
+        • Safe for school, work, or travel.<br>
+        • Comes in various sizes — day pads, night pads, ultra-thin, and extra-long.</p>
+        <p><strong>Recommended Brands:</strong> Whisper, Stayfree, Sofy, Nua, Carmesi, Paree, Niine, Saathi (eco-friendly)</p>
+        <div class="tip">💡 Tip: Change your pad every 4–6 hours to stay fresh and avoid infection.</div>
+    </div>
+
+    <!-- 🌿 2️⃣ Tampons -->
+    <div class="product">
+        <h3>🌿 2️⃣ Tampons</h3>
+        <img src="{% static 'images/care2.jpg' %}" alt="Tampons">
+        <p><strong>Best for:</strong> Women comfortable with internal products & active lifestyles (swimming, sports).</p>
+        <p><strong>What it is:</strong> Small cylindrical cotton plugs inserted into the vagina to absorb flow internally.</p>
+        <p><strong>Why use it:</strong><br>
+        • Feels clean and dry.<br>
+        • Great for swimming or physical activity.<br>
+        • Invisible under clothes.</p>
+        <p><strong>Recommended Brands:</strong> OB Pro Comfort, Sirona, Tampax Pearl, Playtex</p>
+        <div class="tip">💡 Tip: Change every 4–8 hours. Wash your hands before and after insertion.</div>
+    </div>
+
+    <!-- 🌸 3️⃣ Menstrual Cups -->
+    <div class="product">
+        <h3>🌸 3️⃣ Menstrual Cups</h3>
+        <img src="{% static 'images/care3.jpg' %}" alt="Menstrual Cup">
+        <p><strong>Best for:</strong> Eco-friendly and long-term option.</p>
+        <p><strong>What it is:</strong> A soft, reusable silicone cup inserted inside the vagina to collect menstrual flow.</p>
+        <p><strong>Why use it:</strong><br>
+        • Reusable for up to 5–10 years 🌍<br>
+        • Cost-effective and environmentally friendly.<br>
+        • Holds more fluid than a pad or tampon.</p>
+        <p><strong>Recommended Brands:</strong> Sirona Cup, Boondh Cup, Carmesi, PeeSafe Cup, Saathi Cup</p>
+        <div class="tip">💡 Tip: Sterilize before and after every period by boiling in hot water.</div>
+    </div>
+
+    <!-- 🌼 4️⃣ Period Panties -->
+    <div class="product">
+        <h3>🌼 4️⃣ Period Panties</h3>
+        <img src="{% static 'images/care4.jpg' %}" alt="Period Panties">
+        <p><strong>Best for:</strong> Teens, night-time, and travel comfort.</p>
+        <p><strong>What it is:</strong> Underwear with built-in absorbent layers that soak up menstrual flow directly.</p>
+        <p><strong>Why use it:</strong><br>
+        • Super comfortable — feels like normal underwear.<br>
+        • Leak-proof and reusable.<br>
+        • Great for light to medium flow.</p>
+        <p><strong>Recommended Brands:</strong> Adira, Carmesi, Modibodi, Zivame, Sirona</p>
+        <div class="tip">💡 Tip: Rinse and wash gently after use. Avoid bleach or harsh detergent.</div>
+    </div>
+
+    <!-- 🌿 5️⃣ Reusable Cloth Pads -->
+    <div class="product">
+        <h3>🌿 5️⃣ Biodegradable / Reusable Cloth Pads</h3>
+        <img src="{% static 'images/care5.jpg' %}" alt="Reusable Cloth Pads">
+        <p><strong>Best for:</strong> Eco-conscious women & rural areas where disposable pads are costly.</p>
+        <p><strong>What it is:</strong> Cloth pads made from soft cotton layers that can be washed and reused.</p>
+        <p><strong>Why use it:</strong><br>
+        • Safe, breathable, and environment-friendly 🌿<br>
+        • Cheaper in the long run.<br>
+        • Made by many women-led rural startups!</p>
+        <p><strong>Recommended Brands:</strong> Eco Femme, Saathi, Vivan, Anandi Pads</p>
+        <div class="tip">💡 Tip: Wash well, dry under sunlight, and store in a clean pouch.</div>
+    </div>
+
+    <h3>🌷 Carefree Hygiene Tips</h3>
+    <p>✨ Always wash your hands before and after changing.<br>
+       ✨ Keep an extra pad or panty liner in your bag.<br>
+       ✨ Wear cotton underwear to avoid irritation.<br>
+       ✨ Stay hydrated and eat iron-rich foods.<br>
+       ✨ Take a warm bath to relax and reduce cramps.</p>
+
+    <div class="quote-box">
+        <p>💬 “Your period is not a problem — it’s a sign of your strength. Care for your body, and it will care for you.”</p>
+    </div>
+
+    <a href="{% url 'menstrual_carefree' %}" class="back-btn">← Back to Carefree Home</a>
+</div>
+
+</body>
+</html>

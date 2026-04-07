@@ -1,0 +1,388 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baby Vaccines - SakhiCare Newborn Care</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff8f9;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar h1 {
+      color: #ff6b81;
+      font-size: 1.6rem;
+      margin: 0;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      margin-left: 20px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ff6b81;
+    }
+
+    /* Hero */
+    .hero {
+      /* Placeholder background image for the banner area */
+      background: url("{% static 'images/baby_vaccine_banner.jpg' %}") center/cover no-repeat;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    /* Subtle overlay for text clarity, replacing the strong pink overlay */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ff6b81; /* Soft, subtle pink overlay */
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* Vaccination Section */
+    .vaccination-schedule-section {
+      background: #fff;
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 50px auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(255,107,129,0.15);
+    }
+
+    .schedule-header h2 {
+      color: #ff6b81;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .schedule-header p {
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .schedule-table-wrapper {
+      overflow-x: auto;
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+
+    .schedule-table th, .schedule-table td {
+      padding: 12px 16px;
+      border: 1px solid #eee;
+      text-align: left;
+    }
+
+    .schedule-table th {
+      background-color: #ffdeea;
+      color: #ff6b81;
+      font-weight: 600;
+    }
+
+    .schedule-table tbody tr:nth-child(even) {
+      background-color: #fff8f9;
+    }
+
+    .schedule-note {
+      color: #777;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .action-button {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .btn-book-vaccine {
+      display: inline-block;
+      background-color: #ff6b81;
+      color: #fff;
+      padding: 14px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    .btn-book-vaccine:hover {
+      background-color: #ff4c5b;
+    }
+
+    /* Info Section */
+    .info-section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 40px 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(255,107,129,0.1);
+    }
+
+    .info-section h2 {
+      color: #ff6b81;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .info-content {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .info-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .info-text h3 {
+      color: #ff6b81;
+      font-size: 1.3rem;
+      margin-top: 20px;
+    }
+
+    .info-text p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .info-image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+
+    .info-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    /* --- UPDATED IMAGE STYLES (Full Image Display) --- */
+    .vaccine-images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .vaccine-images img {
+      width: 320px;
+      height: 250px; /* Set height for consistent display of full images */
+      object-fit: cover;
+      border-radius: 10px; /* Soft edges for a modern look */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .vaccine-images img:hover {
+      transform: scale(1.03);
+    }
+    /* ------------------------------------------------ */
+
+    .back-btn {
+      display: inline-block;
+      text-decoration: none;
+      background: #ff6b81;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin-top: 40px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #ff4f70;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #fff;
+      border-top: 1px solid #eee;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .info-content {
+        flex-direction: column;
+      }
+      .info-image img {
+        max-width: 100%;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      /* Ensure images stack nicely on mobile */
+      .vaccine-images img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <h1>🤱 SakhiCare</h1>
+    <div>
+      <a href="{% url 'dashboard' %}">🏠 Home</a>
+     
+      <a href="{% url 'logout' %}">Logout</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-content">
+      <h2>Baby Vaccination Schedule</h2>
+      <p>Ensure your baby’s healthy future with timely immunizations, guided by trusted pediatric experts.</p>
+    </div>
+  </div>
+
+   </section>
+
+  <section class="info-section">
+    <h2>💖 Why Is Vaccinating Your Child Important?</h2>
+    <div class="info-content">
+      <div class="info-text">
+        <h3>Vaccines Can Save Your Child’s Life</h3>
+        <p>Vaccines help protect your child from serious diseases that can cause long-term health issues or even death. Some diseases, like measles and tetanus, have no cure — vaccination is the safest protection.</p>
+
+        <h3>Vaccine-Preventable Diseases Are Still Around</h3>
+        <p>Even though vaccines reduced disease rates in India, germs still exist. If fewer people vaccinate, these diseases can return, leading to outbreaks like polio in nearby regions.</p>
+
+        <h3>Vaccines Protect More Than Just Your Child</h3>
+        <p>When you vaccinate, you help protect your family and community through herd immunity — shielding newborns, patients, and those with weak immune systems.</p>
+
+        <h3>Vaccines Are Safe and Effective</h3>
+        <p>All vaccines go through strict safety testing and continuous monitoring. Thanks to them, diseases like smallpox and polio are now eliminated in India.</p>
+
+        <h3>Vaccines Cost Less Than Treating Diseases</h3>
+        <p>Vaccines are far more affordable than hospital treatments. Following your child’s immunization schedule saves you money and safeguards their health long-term.</p>
+      </div>
+
+      <div class="info-image">
+        <img src="{% static 'images/babyv.jpg' %}" alt="Why Vaccines Matter">
+      </div>
+    </div>
+  </section>
+
+  <section class="vaccination-schedule-section">
+    <div class="schedule-header">
+      <h2>🧬 Comprehensive Baby Vaccination Timeline</h2>
+      <p>Based on expert pediatric guidance and recommended immunization charts.</p>
+    </div>
+
+    <div class="schedule-table-wrapper">
+      <table class="schedule-table">
+        <thead>
+          <tr><th>Age</th><th>Vaccines</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Birth</td><td>BCG, Hep B1, OPV</td></tr>
+          <tr><td>6 Weeks</td><td>DTwP/DTaP1, Hib-1, IPV-1, Hep B2, PCV 1, Rota-1</td></tr>
+          <tr><td>10 Weeks</td><td>DTwP/DTaP2, Hib-2, IPV-2, Hep B3, PCV 2, Rota-2</td></tr>
+          <tr><td>14 Weeks</td><td>DTwP/DTaP3, Hib-3, IPV-3, Hep B4, PCV 3, Rota-3*</td></tr>
+          <tr><td>6 Months</td><td>Influenza-1</td></tr>
+          <tr><td>7 Months</td><td>Influenza-2</td></tr>
+          <tr><td>6–9 Months</td><td>Typhoid Conjugate Vaccine</td></tr>
+          <tr><td>9 Months</td><td>MMR 1 (Mumps, Measles, Rubella)</td></tr>
+          <tr><td>12 Months</td><td>Hepatitis A-1</td></tr>
+          <tr><td>12–15 Months</td><td>PCV Booster</td></tr>
+          <tr><td>15 Months</td><td>MMR 2, Varicella</td></tr>
+          <tr><td>16–18 Months</td><td>DTwP/DTaP, Hib, IPV</td></tr>
+          <tr><td>18–19 Months</td><td>Hepatitis A-2**, Varicella 2</td></tr>
+          <tr><td>4–6 Years</td><td>DTwP/DTaP, IPV, MMR 3</td></tr>
+          <tr><td>9–15 Years (Girls)</td><td>HPV (2 doses)</td></tr>
+          <tr><td>10–12 Years</td><td>Tdap/Td</td></tr>
+          <tr><td>2nd–5th Year</td><td>Annual Influenza Vaccine</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="schedule-note">
+      <p><strong>Note:</strong> Your pediatrician may adjust the vaccine timeline depending on your child’s health and local immunization program.</p>
+    </div>
+
+    <div class="action-button">
+      <a href="{% url 'post_book_appointment' %}" class="btn-book-vaccine">📅 Book Vaccine Appointment</a>
+    </div>
+
+    <div class="vaccine-images">
+      <img src="{% static 'images/babyv.jpg' %}" alt="Baby Vaccination">
+      <img src="{% static 'images/babyv2.jpg' %}" alt="Pediatric Care">
+      <img src="{% static 'images/babyv3.jpg' %}" alt="Healthy Baby">
+    </div>
+    
+    <div>
+      <a href="{% url 'postpregnancy_home' %}" class="back-btn">⬅ Back to Post-Pregnancy Home</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 SakhiCare. Caring for Mothers & Newborns Every Step of the Way.
+  </footer>
+
+</body>
+</html>

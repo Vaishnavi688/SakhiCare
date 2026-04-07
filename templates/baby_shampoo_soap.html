@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baby Shampoo & Soap | SakhiCare Newborn Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8f9;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #ff6b81;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #ff88a2;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+p {
+    line-height: 1.7;
+    font-size: 1rem;
+    color: #555;
+}
+
+.tip-box {
+    background: #fff0f5;
+    border-left: 5px solid #ff6b81;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+img {
+    display: block;
+    max-width: 350px;
+    width: 100%;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.back-btn {
+    display: block;
+    text-decoration: none;
+    background: #ff6b81;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-align: center;
+    margin: 30px auto 0;
+    width: fit-content;
+    transition: 0.3s;
+}
+.back-btn:hover {
+    background: #ff4d6a;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    img {
+        max-width: 250px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🧴 Baby Shampoo & Soap</h1>
+    <h2>Gentle Care for Your Newborn’s Delicate Hair & Skin</h2>
+
+    <img src="{% static 'images/babyc14.jpg' %}" alt="Baby Shampoo & Soap">
+
+    <p>Using mild, tear-free shampoo and soap is essential to protect your baby’s delicate scalp and skin. Harsh chemicals or strong fragrances can irritate their sensitive skin, so always choose products labeled safe for newborns.</p>
+
+    <div class="tip-box">
+        💡 <strong>Tips for Choosing Baby Shampoo & Soap:</strong>
+        <ul>
+            <li>Look for pH-balanced formulas designed for babies.</li>
+            <li>Prefer fragrance-free or lightly scented products.</li>
+            <li>Always test on a small area first if using a new product.</li>
+            <li>Brands like Sebamed, Aveeno Baby, and Himalaya Gentle are widely recommended.</li>
+            <li>Use lukewarm water, not hot, when bathing your baby.</li>
+        </ul>
+    </div>
+
+    <div class="tip-box">
+        💧 <strong>Bathing & Shampooing Tips:</strong>
+        <ul>
+            <li>Wet hair gently before applying shampoo.</li>
+            <li>Lather softly with fingertips, not nails.</li>
+            <li>Rinse thoroughly to remove all soap residues.</li>
+            <li>Pat dry with a soft towel — avoid rubbing vigorously.</li>
+        </ul>
+    </div>
+
+    <div class="tip-box">
+        🌸 <strong>Extra Care:</strong>
+        <ul>
+            <li>Massage the scalp with a few drops of coconut or almond oil before washing to prevent dryness.</li>
+            <li>Limit baths to 2–3 times a week in newborns to avoid skin dryness.</li>
+            <li>Always supervise bath time — never leave your baby unattended.</li>
+        </ul>
+    </div>
+
+    <a href="{% url 'baby_care' %}" class="back-btn">⬅ Back to Baby Care Home</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carefree - SakhiCare</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #fff0f5, #fff7f7);
+    color: #333;
+}
+
+/* Carefree Content */
+.carefree-content {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+.carefree-content h2 {
+    color: #ff6b81;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+}
+.carefree-content p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Vertical Cards */
+.info-card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.info-card img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px 0 0 12px;
+}
+
+.info-card-content {
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-card-content h3 {
+    color: #ff6b81;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    font-size: 1.25rem;
+}
+
+.info-card-content p {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.info-card-content .read-more {
+    text-decoration: none;
+    color: #ff6b81;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .info-card {
+        flex-direction: column;
+    }
+    .info-card img {
+        width: 100%;
+        height: 200px;
+        border-radius: 12px 12px 0 0;
+    }
+}
+
+.back-btn {
+    display: inline-block;
+    margin: 10px auto;
+    background-color: #ff6b81;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+    text-align: left;
+}
+.back-btn:hover { background-color: #ff4d6a; }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border-top: 1px solid #eee;
+    margin-top: 50px;
+}
+</style>
+</head>
+<body>
+
+<div class="carefree-content">
+    <h2>Your Guide to Carefree Comfort & Hygiene</h2>
+    <p>Stay fresh, comfortable, and stress-free during your period. Explore products, tips, and essentials for a worry-free experience. 
+       To help users stay comfortable, confident, and stress-free during their periods through self-care tips, hygiene awareness, comfort hacks, and emotional support.
+    </p>
+
+    <!-- Card 1 -->
+    <div class="info-card">
+        <img src="{% static 'images/a.webp' %}" alt="How to Use Sanitary Pads">
+        <div class="info-card-content">
+            <h3>How to Use Sanitary Pads</h3>
+            <p>Stay clean and confident. Periods are a natural part of being a woman — taking care of yourself helps you feel fresh and comfortable. Here’s a simple guide to using sanitary pads safely.</p>
+            <a href="{% url 'how_to_use_pads' %}" class="back-btn">Read More</a>
+
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="info-card">
+        <img src="{% static 'images/b.webp' %}" alt="Best Products to Use During Periods">
+        <div class="info-card-content">
+            <h3>Best Products to Use During Periods</h3>
+            <p>Taking care of your menstrual hygiene is about comfort, safety, and confidence. Choose products that feel right for your body and needs.</p>
+            <a href="{% url 'best_products' %}" class="back-btn">Read More</a>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="info-card">
+        <img src="{% static 'images/c.jpg' %}" alt="How to Maintain Personal Hygiene During Periods">
+        <div class="info-card-content">
+            <h3>How to Maintain Personal Hygiene During Periods</h3>
+            <p>Good hygiene is not just about staying clean — it’s about staying confident, healthy, and comfortable during your period.</p>
+            <a href="{% url 'personal_hygiene' %}" class="back-btn">Read More</a>
+        </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="info-card">
+        <img src="{% static 'images/d.jpg' %}" alt="Comfort & Self-Care During Periods">
+        <div class="info-card-content">
+            <h3>Comfort & Self-Care During Periods</h3>
+            <p>Your period is a natural part of life — with a little care, you can stay comfortable, confident, and stress-free.</p>
+            <a href="{% url 'comfort_selfcare' %}" class="back-btn">Read More</a>
+        </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="info-card">
+        <img src="{% static 'images/e.png' %}" alt="Common Myths & Facts About Periods">
+        <div class="info-card-content">
+            <h3>Common Myths & Facts About Periods</h3>
+            <p>Periods are natural, healthy, and nothing to be ashamed of. Let’s bust the myths and embrace the facts!</p>
+            <a href="{% url 'myths_facts' %}" class="back-btn">Read More</a>
+        </div>
+    </div>
+
+    <a href="/menstrual/" class="back-btn">← Back to Menstrual Home</a>
+</div>
+
+<footer>
+    © 2025 SakhiCare. Empowering Women’s Health.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Pregnancy Emotional Support - SakhiCare</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffe6ea, #fff7f7);
+  padding: 20px;
+  color: #333;
+}
+
+.container { max-width: 1000px; margin: 0 auto; }
+
+.header { text-align: center; margin-bottom: 40px; }
+
+.header h1 { color: #ff6b81; font-size: 2rem; margin-bottom: 10px; }
+
+.header p { font-size: 1.1rem; color: #555; line-height: 1.5; }
+
+/* Sections */
+.section {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.section h2 { color: #ff6b81; margin-bottom: 15px; }
+
+.section p { color: #555; line-height: 1.6; margin-bottom: 15px; }
+
+.support-list { list-style: disc; list-style-position: inside; padding-left: 15px; line-height: 1.6; }
+
+.support-list li { margin-bottom: 10px; }
+
+/* Buttons */
+.back-btn {
+  display: block;
+  margin: 20px auto 0 auto;
+  background-color: #ff6b81;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  text-align: center;
+  width: fit-content;
+}
+.back-btn:hover { background-color: #ff4d6a; }
+
+/* Responsive */
+@media (max-width:768px) {
+  .section { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header class="header">
+    <h1>💖 Pre-Pregnancy Emotional Support</h1>
+    <p>Preparing emotionally is just as important as preparing physically. Learn ways to manage stress, stay positive, and connect with a supportive community before pregnancy.</p>
+  </header>
+
+  <!-- Section 1: Understanding Emotions -->
+  <div class="section">
+    <h2>Understanding Your Emotions</h2>
+    <p>Pre-pregnancy can bring excitement, hope, and also anxiety or stress. It's normal to experience mixed feelings. Recognizing and understanding your emotions is the first step towards emotional wellness.</p>
+  </div>
+
+  <!-- Section 2: Healthy Coping Strategies -->
+  <div class="section">
+    <h2>Healthy Coping Strategies</h2>
+    <ul class="support-list">
+      <li>🧘 Practice mindfulness and deep breathing exercises daily.</li>
+      <li>📓 Maintain a journal to reflect on your thoughts and feelings.</li>
+      <li>🚶 Engage in gentle physical activity like yoga or walking.</li>
+      <li>💬 Connect with supportive friends, family, or communities.</li>
+      <li>👩‍⚕️ Seek professional help from a counselor or therapist if needed.</li>
+    </ul>
+  </div>
+
+  <!-- Section 3: Community & Stories -->
+  <div class="section">
+    <h2>Community & Real Stories</h2>
+    <p>Read experiences of other women preparing for pregnancy. Join online forums or support groups to share and learn from others’ journeys.</p>
+    <ul class="support-list">
+      <li>🖥 Weekly online support group meetups (Zoom or Google Meet).</li>
+      <li>📖 Stories from women sharing their mental wellness tips.</li>
+      <li>❓ Q&A sessions with certified counselors.</li>
+    </ul>
+  </div>
+
+  <!-- Section 4: Quick Emotional Wellness Tips -->
+  <div class="section">
+    <h2>Quick Emotional Wellness Tips</h2>
+    <ul class="support-list">
+      <li>🌞 Start your day with positive affirmations.</li>
+      <li>🙏 Practice gratitude by listing three things you're thankful for.</li>
+      <li>📵 Take short breaks from social media and stressful news.</li>
+      <li>🎵 Listen to calming music or guided meditation tracks.</li>
+      <li>🌿 Spend time in nature or with pets to relax.</li>
+    </ul>
+  </div>
+
+  <!-- Section 5: Need Someone to Talk To -->
+  <div class="section" style="background:#ffe6ea; text-align:center;">
+    <h2>🤝 Need Someone to Talk To?</h2>
+    <p>If you feel anxious, stressed, or just need someone to listen, our team is here to help. You are not alone.</p>
+    <a href="{% url 'contact_us' %}" class="back-btn" style="background:#ff6b81;">📞 Contact Us</a>
+  </div>
+
+  <!-- Back button -->
+  <a href="{% url 'prepregnancy_home' %}" class="back-btn">← Back to Pre-Pregnancy Home</a>
+
+</div>
+
+</body>
+</html>

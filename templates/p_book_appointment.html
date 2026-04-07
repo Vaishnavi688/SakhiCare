@@ -1,0 +1,389 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment - SakhiCare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #fff9f9;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 12px 25px;
+    }
+
+    .navbar h1 {
+      color: #ff6b81;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      margin-left: 20px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ff6b81;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: #ff6b81;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* Doctor Card */
+    .doctor-card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .doctor-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(255,107,129,0.25);
+    }
+
+    .doctor-card img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px 0 0 15px;
+    }
+
+    .doctor-info {
+      flex: 1;
+      padding: 20px 25px;
+    }
+
+    .doctor-info h3 {
+      color: #ff6b81;
+      margin-bottom: 5px;
+    }
+
+    .doctor-info p {
+      margin: 5px 0;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .book-btn {
+      display: inline-block;
+      background: #ff6b81;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .book-btn:hover {
+      background: #ff4f70;
+    }
+
+    /* Hidden Booking Form */
+    .booking-form {
+      display: none;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      padding: 20px;
+      margin: 15px 0 25px 0;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Poppins';
+    }
+
+    button.submit-btn {
+      width: 100%;
+      background: #ff6b81;
+      border: none;
+      color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button.submit-btn:hover {
+      background: #ff4f70;
+    }
+
+    footer {
+      text-align: center;
+      background: #fff;
+      border-top: 1px solid #eee;
+      padding: 15px;
+      color: #666;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .doctor-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .doctor-card img {
+        border-radius: 15px 15px 0 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+    .back-btn {
+    display: inline-block;
+    margin: 0 auto 30px auto;
+    background-color: #ff6b81;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+    }
+    .back-btn:hover { background-color: #ff4d6a; }
+</style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>👩‍⚕️ SakhiCare Appointments</h1>
+    <div>
+      <a href="{% url 'dashboard' %}">🏠 Dashboard</a>
+      <a href="{% url 'logout' %}">Logout</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Choose a Doctor & Book Your Appointment</h2>
+
+    <!-- Doctor 1 -->
+    <div class="doctor-card">
+      <img src="{% static 'images/doctorf.png' %}" alt="Dr. Ananya Sharma">
+      <div class="doctor-info">
+        <h3>Dr. Ananya Sharma</h3>
+        <p>Gynecologist | 10 yrs experience</p>
+        <p>Location: Mumbai Women's Clinic</p>
+        <p>⭐ 4.9 (250 reviews)</p>
+        <button class="book-btn" onclick="toggleForm('form1')">Book Now</button>
+
+        <div id="form1" class="booking-form">
+          <h4>Book with Dr. Ananya Sharma</h4>
+          <form>
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" required>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" required>
+            </div>
+            <div class="form-group">
+              <label>Preferred Date</label>
+              <input type="date" required>
+            </div>
+            <div class="form-group">
+              <label>Preferred Time Slot</label>
+              <select required>
+                <option value="">Select</option>
+                <option>9:00 AM - 10:00 AM</option>
+                <option>10:00 AM - 11:00 AM</option>
+                <option>4:00 PM - 5:00 PM</option>
+                <option>5:00 PM - 6:00 PM</option>
+                <option>6:00 PM - 7:00 PM</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Concern / Message</label>
+              <textarea rows="3" placeholder="Describe your concern..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Confirm Appointment</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doctor 2 -->
+    <div class="doctor-card">
+      <img src="{% static 'images/doctorf.png' %}" alt="Dr. Meera Joshi">
+      <div class="doctor-info">
+        <h3>Dr. Meera Joshi</h3>
+        <p>Fertility Specialist | 8 yrs experience</p>
+        <p>Location: Blossom Fertility Centre</p>
+        <p>⭐ 4.8 (190 reviews)</p>
+        <button class="book-btn" onclick="toggleForm('form2')">Book Now</button>
+
+        <div id="form2" class="booking-form">
+          <h4>Book with Dr. Meera Joshi</h4>
+          <form>
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" required>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" required>
+            </div>
+            <div class="form-group">
+              <label>Preferred Date</label>
+              <input type="date" required>
+            </div>
+            <div class="form-group">
+              <label>Preferred Time Slot</label>
+              <select required>
+                <option value="">Select</option>
+                <option>10:00 AM - 11:00 AM</option>
+                <option>11:00 AM - 12:00 PM</option>
+                <option>5:00 PM - 6:00 PM</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Concern / Message</label>
+              <textarea rows="3"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Confirm Appointment</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doctor 3 -->
+    <div class="doctor-card">
+      <img src="{% static 'images/doctorf.png' %}" alt="Dr. Priya Nair">
+      <div class="doctor-info">
+        <h3>Dr. Priya Nair</h3>
+        <p>Nutrition & Wellness Expert | 7 yrs experience</p>
+        <p>Location: HealthPlus Center</p>
+        <p>⭐ 4.7 (180 reviews)</p>
+        <button class="book-btn" onclick="toggleForm('form3')">Book Now</button>
+
+        <div id="form3" class="booking-form">
+          <h4>Book with Dr. Priya Nair</h4>
+          <form>
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" required>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" required>
+            </div>
+            <div class="form-group">
+              <label>Preferred Date</label>
+              <input type="date" required>
+            </div>
+            <div class="form-group">
+              <label>Preferred Time Slot</label>
+              <select required>
+                <option value="">Select</option>
+                <option>9:00 AM - 10:00 AM</option>
+                <option>3:00 PM - 4:00 PM</option>
+                <option>5:00 PM - 6:00 PM</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Concern / Message</label>
+              <textarea rows="3"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Confirm Appointment</button>
+          </form>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+
+  <script>
+  function toggleForm(id) {
+    const form = document.getElementById(id);
+    form.style.display = form.style.display === "block" ? "none" : "block";
+  }
+
+  // Handle submission of any booking form
+  document.addEventListener("submit", function (e) {
+    e.preventDefault(); // stop form reload
+    const form = e.target;
+
+    const doctorName = form.closest(".doctor-info").querySelector("h3").innerText;
+    const date = form.querySelector('input[type="date"]').value;
+    const time = form.querySelector("select").value;
+
+    if (date && time) {
+      alert(`✅ Appointment confirmed with ${doctorName} on ${date} at ${time}`);
+      form.reset();
+      form.parentElement.style.display = "none"; // close form after confirmation
+    } else {
+      alert("⚠️ Please select a date and time before confirming.");
+    }
+  });
+</script>
+<div style="text-align: center; margin-top: 30px;">
+      <a href="/prepregnancy_home/" class="back-btn">← Back to Pre-Pregnancy Home</a>
+    </div>
+  <footer>
+    © 2025 SakhiCare | Empowering Women’s Health
+  </footer>
+
+  <script>
+    function toggleForm(id) {
+      const form = document.getElementById(id);
+      form.style.display = form.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>

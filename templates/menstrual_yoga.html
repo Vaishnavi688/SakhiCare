@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yoga for Menstrual Wellness - SakhiCare</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffe6ea, #fff7f7);
+  padding: 20px;
+}
+
+.yoga-page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.yoga-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.yoga-header-text {
+  max-width: 600px;
+}
+
+.yoga-header h1 {
+  font-size: 2rem;
+  color: #ff6b81;
+  margin-bottom: 10px;
+}
+
+.yoga-header p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.yoga-videos-section {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 50px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.yoga-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  width: 320px;
+  flex: 0 0 auto;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.yoga-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.yoga-card iframe {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 180px;
+}
+
+.yoga-card h3 {
+  font-size: 1rem;
+  color: #ff6b81;
+  margin-top: 5px;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #ff6b81;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.back-btn:hover { background-color: #ff4d6a; }
+
+.yoga-tips-section {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 25px;
+  margin-bottom: 50px;
+}
+
+.yoga-tips-section h2 {
+  color: #ff6b81;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.yoga-tips-section ul {
+  list-style: disc;
+  list-style-position: inside;
+  padding-left: 15px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.yoga-tips-section li {
+  margin-bottom: 10px;
+}
+
+/* Hide scrollbar */
+.yoga-videos-section::-webkit-scrollbar { display: none; }
+
+@media (max-width: 768px) {
+  .yoga-card iframe { height: 160px; }
+}
+@media (max-width: 480px) {
+  .yoga-card iframe { height: 140px; }
+  .yoga-header h1 { font-size: 1.6rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="yoga-page">
+  <header class="yoga-header">
+    <div class="yoga-header-text">
+      <h1>🧘 Yoga for Menstrual Wellness</h1>
+      <p>Practice gentle yoga to ease cramps, improve mood, and support your menstrual health. Follow these easy routines at home for better comfort during your period.</p>
+    </div>
+  </header>
+
+  <section class="yoga-videos-section">
+    <!-- Video 1 (non-embeddable, use link) -->
+    <div class="yoga-card">
+      
+      <img src="{% static 'images/m1.jpg' %}" alt="Yoga for Period Cramps" style="width:100%; border-radius:10px; margin-bottom:10px;">
+      <h3>Yoga for Period Cramps - 10 min Relief</h3>
+      <a href="https://www.youtube.com/watch?v=r6hyWhp5rQg" target="_blank" class="back-btn">Watch Video</a>
+    </div>
+
+    <!-- Video 2 (embeddable) -->
+    <div class="yoga-card">
+      <img src="{% static 'images/m2.jpg' %}" alt="Yoga for Period Cramps" style="width:100%; border-radius:10px; margin-bottom:10px;">
+        <h3>15 Min Period Yoga for Menstrual Cramps Relief</h3>
+      <a href="https://www.youtube.com/watch?v=5d7c7Id9mGc" target="_blank" class="back-btn">Watch Video</a>
+     
+
+    </div>
+
+    <!-- Video 3 (non-embeddable, use link) -->
+    <div class="yoga-card">
+      <img src="{% static 'images/m3.jpg' %}" alt="Yoga for Period Cramps" style="width:100%; border-radius:10px; margin-bottom:10px;">
+      <h3>20 Min Gentle Yoga For Your Period</h3>
+      <a href="https://www.youtube.com/watch?v=lKx0sOz31C4&t=1493s" target="_blank" class="back-btn">Watch Video</a>
+    </div>
+  </section>
+
+  <section class="yoga-tips-section">
+    <h2>Yoga Tips for Menstrual Health</h2>
+    <ul>
+      <li>Focus on gentle stretches and avoid heavy inversion poses.</li>
+      <li>Stay hydrated and breathe deeply during exercises.</li>
+      <li>Practice regularly for better cycle regulation.</li>
+      <li>Listen to your body and stop if you feel discomfort.</li>
+    </ul>
+  </section>
+
+  <a href="/menstrual/" class="back-btn">← Back to Menstrual Home</a>
+</div>
+
+</body>
+</html>

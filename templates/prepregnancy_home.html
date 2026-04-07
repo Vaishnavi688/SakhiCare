@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Pregnancy Wellness - SakhiCare</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff9f9;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 25px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.navbar h1 { color: #ff6b81; }
+.navbar a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+.navbar a:hover { color: #ff6b81; }
+
+/* Section Container */
+.section-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.section-container h2 { color: #ff6b81; margin-bottom: 30px; font-size: 2rem; }
+
+/* Grid of Features */
+.features-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: nowrap; /* keep in one line */
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+.features-grid::-webkit-scrollbar {
+  height: 8px;
+}
+.features-grid::-webkit-scrollbar-thumb {
+  background: rgba(255,107,129,0.5);
+  border-radius: 4px;
+}
+.features-grid::-webkit-scrollbar-track {
+  background: #fff9f9;
+}
+
+/* Feature Card */
+.feature-card {
+  flex: 0 0 220px; /* fixed width */
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  text-align: center;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(255,107,129,0.3);
+}
+.feature-card img {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+.feature-card h3 {
+  color: #ff6b81;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+.feature-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  border-top: 1px solid #eee;
+  margin-top: 100px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .features-grid { gap: 20px; }
+}
+@media (max-width: 768px) {
+  .features-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+  <h1>🤰 SakhiCare - Pre-Pregnancy Wellness</h1>
+  <div>
+    <a href="{% url 'dashboard' %}">🏠 Home</a>
+    <a href="{% url 'logout' %}">Logout</a>
+  </div>
+</div>
+
+<!-- Section -->
+<div class="section-container">
+  <h2>Prepare for a Healthy and Happy Pregnancy</h2>
+  <p style="max-width: 700px; margin: 0 auto 40px; color: #666;">
+    This is your safe space to prepare for motherhood. Get expert advice on health, nutrition, and emotional balance before conception.
+  </p>
+
+  <div class="features-grid">
+    <a href="{% url 'p_book_appointment' %}">
+      <div class="feature-card">
+        <img src="{% static 'images/bookap.jpg' %}" alt="Doctor Consultation">
+        <h3>Book Appointment</h3>
+        <p>Consult with expert gynecologists and fertility specialists for personalized guidance.</p>
+      </div>
+    </a>
+
+    <a href="{% url 'prepregnancy_nutrition' %}">
+      <div class="feature-card">
+        <img src="{% static 'images/pnurtition.png' %}" alt="Nutrition">
+        <h3>Nutrition</h3>
+        <p>Learn about pre-pregnancy superfoods, vitamins, and balanced diet plans.</p>
+      </div>
+    </a>
+
+    <a href="{% url 'prepregnancy_dos_donts' %}">
+      <div class="feature-card">
+        <img src="{% static 'images/p-yn.png' %}" alt="Do's and Don'ts">
+        <h3>What to Do & What Not to Do</h3>
+        <p>Understand the lifestyle choices, habits, and activities to embrace or avoid before pregnancy.</p>
+      </div>
+    </a>
+
+    <a href="{% url 'prepregnancy_yoga' %}">
+      <div class="feature-card">
+        <img src="{% static 'images/p-yogy.png' %}" alt="Yoga">
+        <h3>Yoga & Fitness</h3>
+        <p>Gentle yoga poses to improve flexibility, boost fertility, and reduce stress naturally.</p>
+      </div>
+    </a>
+
+    <a href="{% url 'prepregnancy_emotional_support' %}">
+      <div class="feature-card">
+        <img src="{% static 'images/p-emotionals.png' %}" alt="Emotional Support">
+        <h3>Emotional Support</h3>
+        <p>Read stories, connect with others, and learn ways to stay calm and positive.</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  © 2025 SakhiCare. Empowering Women’s Health.
+</footer>
+
+</body>
+</html>

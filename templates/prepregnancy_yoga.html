@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Pregnancy Yoga & Fitness - SakhiCare</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffe6ea, #fff7f7);
+  padding: 20px;
+}
+
+.yoga-page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.yoga-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.yoga-header h1 {
+  font-size: 2rem;
+  color: #ff6b81;
+  margin-bottom: 10px;
+}
+
+.yoga-header p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.yoga-videos-section {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 50px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.yoga-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  width: 320px;
+  flex: 0 0 auto;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.yoga-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.yoga-card img {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.yoga-card h3 {
+  font-size: 1rem;
+  color: #ff6b81;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.watch-btn {
+  display: inline-block;
+  background-color: #ff6b81;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.watch-btn:hover { background-color: #ff4d6a; }
+
+.yoga-tips-section {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 25px;
+  margin-bottom: 50px;
+}
+
+.yoga-tips-section h2 {
+  color: #ff6b81;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.yoga-tips-section ul {
+  list-style: disc;
+  list-style-position: inside;
+  padding-left: 15px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.yoga-tips-section li {
+  margin-bottom: 10px;
+}
+
+.back-btn {
+  display: block;
+  margin: 30px auto 0 auto;
+  background-color: #ff6b81;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  text-align: center;
+  width: fit-content;
+}
+
+.back-btn:hover { background-color: #ff4d6a; }
+
+/* Hide scrollbar for video section */
+.yoga-videos-section::-webkit-scrollbar {
+  display: none;
+}
+</style>
+</head>
+<body>
+
+<div class="yoga-page">
+  <header class="yoga-header">
+    <h1>🧘 Pre-Pregnancy Yoga & Fitness</h1>
+    <p>Support your fertility, reduce stress, and strengthen your body gently before pregnancy. Follow these routines at home for better overall wellness.</p>
+  </header>
+
+  <section class="yoga-videos-section">
+    <!-- Video 1 -->
+    <div class="yoga-card">
+      <img src="{% static 'images/pp1.jpg' %}" alt="Gentle Pre-Pregnancy Yoga">
+      <h3>Gentle Pre-Pregnancy Yoga - 15 min</h3>
+      <a href="https://www.youtube.com/watch?v=BG7mMK0914w" target="_blank" class="watch-btn">🎥 Watch Video</a>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="yoga-card">
+      <img src="{% static 'images/pp2.jpg' %}" alt="Fertility Yoga & Core Strength">
+      <h3>Fertility Yoga & Core Strength - 20 min</h3>
+      <a href="https://www.youtube.com/watch?v=feHp2b29G5U" target="_blank" class="watch-btn">🎥 Watch Video</a>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="yoga-card">
+      <img src="{% static 'images/pp3.jpg' %}" alt="Morning Stretch Yoga for Women">
+      <h3>Morning Stretch Yoga for Women - 10 min</h3>
+      <a href="https://www.youtube.com/watch?v=jEDCvgAjR5o" target="_blank" class="watch-btn">🎥 Watch Video</a>
+    </div>
+  </section>
+
+  <section class="yoga-tips-section">
+    <h2>Yoga & Fitness Tips for Pre-Pregnancy</h2>
+    <ul>
+      <li>Focus on gentle stretches and avoid overexertion.</li>
+      <li>Practice regularly to improve flexibility and reduce stress.</li>
+      <li>Combine yoga with light cardio and a balanced diet.</li>
+      <li>Listen to your body and rest when needed.</li>
+      <li>Maintain proper breathing and posture throughout exercises.</li>
+    </ul>
+  </section>
+
+  <a href="{% url 'prepregnancy_home' %}" class="back-btn">← Back to Pre-Pregnancy Home</a>
+</div>
+
+</body>
+</html>

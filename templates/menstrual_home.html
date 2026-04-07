@@ -1,0 +1,200 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menstrual Cycle - SakhiCare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff7f7;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 25px;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .navbar h1 {
+      color: #ff6b81;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      margin-left: 20px;
+      transition: 0.3s;
+    }
+    .navbar a:hover {
+      color: #ff6b81;
+    }
+
+    /* Section */
+    .section-container {
+      max-width: 1300px;
+      margin: 50px auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .section-container h2 {
+      color: #ff6b81;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    /* Horizontal Scroll Container */
+    .features-scroll {
+      display: flex;
+      gap: 25px;
+      overflow-x: auto;
+      padding-bottom: 15px;
+      scroll-behavior: smooth;
+    }
+
+    .features-scroll::-webkit-scrollbar {
+      height: 10px;
+    }
+    .features-scroll::-webkit-scrollbar-thumb {
+      background-color: #ffb6c1;
+      border-radius: 5px;
+    }
+    .features-scroll::-webkit-scrollbar-track {
+      background-color: #ffeef2;
+      border-radius: 5px;
+    }
+
+    /* Feature Cards */
+    .feature-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      width: 230px;
+      min-height: 340px;
+      flex: 0 0 auto;
+      text-align: center;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(255,107,129,0.3);
+    }
+
+    .feature-card img {
+      width: 100%;
+      height: 160px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 12px;
+    }
+
+    .feature-card h3 {
+      color: #ff6b81;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .feature-card p {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #fff;
+      border-top: 1px solid #eee;
+      margin-top: 100px;
+    }
+
+    /* Links */
+    a {
+      text-decoration: none;
+    }
+
+    a .feature-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    a .feature-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 25px rgba(255, 107, 129, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>🩸 SakhiCare - Menstrual Cycle</h1>
+    <div>
+      <a href="{% url 'dashboard' %}">🏠 Home</a>
+      <a href="{% url 'logout' %}">Logout</a>
+    </div>
+  </div>
+
+  <!-- Section -->
+  <div class="section-container">
+    <h2>Your Menstrual Wellness Hub</h2>
+
+    <!-- One-Line Scrollable Row -->
+    <div class="features-scroll">
+
+      <a href="{% url 'menstrual_period_tracker' %}">
+        <div class="feature-card">
+          <img src="{% static 'images/Menstrualcycle-tracker.jpg' %}" alt="Period Tracker">
+          <h3>Period Tracker</h3>
+          <p>Track your menstrual cycle and get predictions for your next period.</p>
+        </div>
+      </a>
+
+      <a href="{% url 'menstrual_yoga' %}">
+        <div class="feature-card">
+          <img src="{% static 'images/Menstrual-yoga.png' %}" alt="Yoga">
+          <h3>Yoga for Pain Relief</h3>
+          <p>Watch guided yoga videos to ease cramps and improve wellness.</p>
+        </div>
+      </a>
+
+      <a href="{% url 'menstrual_nutrition' %}">
+        <div class="feature-card">
+          <img src="{% static 'images/Menstrual-nutrition.png' %}" alt="Nutrition">
+          <h3>Nutrition</h3>
+          <p>Learn what to eat during your period for energy and comfort.</p>
+        </div>
+      </a>
+
+      <a href="{% url 'menstrual_carefree' %}">
+        <div class="feature-card">
+          <img src="{% static 'images/carefree.png' %}" alt="Carefree Products">
+          <h3>Carefree</h3>
+          <p>Explore recommended hygiene products for comfort and safety.</p>
+        </div>
+      </a>
+
+      <a href="{% url 'menstrual_donation' %}">
+        <div class="feature-card">
+          <img src="{% static 'images/donate.png' %}" alt="Donation">
+          <h3>Donation</h3>
+          <p>Support women in need by donating menstrual hygiene kits.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <footer>
+    © 2025 SakhiCare. Empowering Women’s Health.
+  </footer>
+
+</body>
+</html>

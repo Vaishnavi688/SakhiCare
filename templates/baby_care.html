@@ -1,0 +1,285 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baby Care - SakhiCare Newborn Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8f9;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar h1 {
+    color: #ff6b81;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff6b81;
+}
+
+/* Hero */
+.hero {
+    background: url("{% static 'images/baby_care_banner.jpg' %}") center/cover no-repeat;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color:#ff6b81;
+    opacity: 0.6;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Section */
+.section {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(255,107,129,0.1);
+}
+
+.section h2 {
+    color: #ff6b81;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tips {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* Tip Cards */
+.tip-card {
+    background-color: #fff8f9;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Remove underline from links */
+    color: inherit;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(255,107,129,0.2);
+}
+
+.tip-card img {
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.tip-card h3 {
+    color: #ff6b81;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.tip-card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255,107,129,0.3);
+}
+
+.back-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #ff6b81;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+    text-align: center;
+    transition: 0.3s;
+}
+.back-btn:hover {
+    background: #ff4f70;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #fff;
+    border-top: 1px solid #eee;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .hero h2 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
+    .tip-card img {
+        max-width: 150px;
+        height: auto;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+    <h1>🤱 SakhiCare</h1>
+    <div>
+        <a href="{% url 'dashboard' %}">🏠 Home</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    </div>
+</div>
+
+<div class="hero">
+    <div class="hero-content">
+        <h2>Gentle Baby Care & Nurturing Guidance</h2>
+        <p>Because every baby deserves warmth, comfort, and love in every touch.</p>
+    </div>
+</div>
+
+<section class="section">
+    <h2>🧴 Choosing Safe Baby Products</h2>
+    <p style="text-align:center; max-width:800px; margin:auto; color:#555;">
+        The right baby products help protect your newborn’s sensitive skin and overall health. Always choose items that are dermatologically tested, hypoallergenic, and chemical-free.
+    </p>
+    <div class="tips" style="margin-top:30px;">
+        <!-- Wrap entire card in <a> tag for clickable navigation -->
+        <a href="{% url 'baby_shampoo_soap' %}" class="tip-card">
+            <h3>Baby Shampoo & Soap</h3>
+            <p>Use mild, tear-free shampoo and soap with pH-balanced formulas — brands like Sebamed, Aveeno Baby, or Himalaya Gentle.</p>
+        </a>
+        <a href="{% url 'baby_lotion_oil' %}" class="tip-card">
+            <h3>Baby Lotion & Oil</h3>
+            <p>Opt for coconut or almond oil massages. Moisturize with natural creams — avoid alcohol-based or heavily scented ones.</p>
+        </a>
+        <a href="{% url 'diapers_wipes' %}" class="tip-card">
+            <h3>Diapers & Wipes</h3>
+            <p>Choose breathable diapers and water-based wipes. Always keep the diaper area dry to prevent rashes.</p>
+        </a>
+        <a href="{% url 'clothing_blankets' %}" class="tip-card">
+            <h3>Clothing & Blankets</h3>
+            <p>Use soft, 100% cotton clothes. Avoid tight-fitting outfits and wash all new clothes before use with baby-safe detergent.</p>
+        </a>
+    </div>
+</section>
+
+<section class="section">
+    <h2>🌸 Common Newborn Concerns</h2>
+    <div class="tips">
+        <a href="{% url 'colic_gas' %}" class="tip-card">
+            <h3>Colic or Gas</h3>
+            <p>Gently massage your baby’s tummy and burp after every feed. Consult your pediatrician if colic persists beyond 3 months.</p>
+        </a>
+        <a href="{% url 'diaper_rashes' %}" class="tip-card">
+            <h3>Diaper Rashes</h3>
+            <p>Change diapers frequently, allow air time, and use zinc oxide creams if redness appears.</p>
+        </a>
+        <a href="{% url 'fever_vaccination' %}" class="tip-card">
+            <h3>Fever & Vaccination</h3>
+            <p>A mild fever after vaccination is common. Keep your baby hydrated and monitor temperature — consult your doctor if it lasts beyond 48 hours.</p>
+        </a>
+        <a href="{% url 'cradlecap_dry_skin' %}" class="tip-card">
+            <h3>Cradle Cap or Dry Skin</h3>
+            <p>Apply a little baby oil before washing hair. Use a soft brush to gently loosen flakes.</p>
+        </a>
+    </div>
+</section>
+
+<section class="section">
+    <h2>💞 Beautiful Beginnings</h2>
+    <div class="gallery">
+        <img src="{% static 'images/babyc5.jpg' %}" alt="Baby Massage">
+        <img src="{% static 'images/babyc6.jpg' %}" alt="Mother & Baby">
+        <img src="{% static 'images/babyc7.jpg' %}" alt="Baby Sleep">
+    </div>
+</section>
+
+<div>
+    <a href="{% url 'postpregnancy_home' %}" class="back-btn">⬅ Back to Post-Pregnancy Home</a>
+</div>
+
+<footer>
+    © 2025 SakhiCare. Caring for Mothers & Newborns Every Step of the Way.
+</footer>
+
+</body>
+</html>

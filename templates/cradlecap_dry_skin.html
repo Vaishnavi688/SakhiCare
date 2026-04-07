@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cradle Cap & Dry Skin | SakhiCare Newborn Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8f9;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #ff6b81;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #ff88a2;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+p {
+    line-height: 1.7;
+    font-size: 1rem;
+    color: #555;
+}
+
+.tip-box {
+    background: #fff0f5;
+    border-left: 5px solid #ff6b81;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+img {
+    display: block;
+    max-width: 350px;
+    width: 100%;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.back-btn {
+    display: block;
+    text-decoration: none;
+    background: #ff6b81;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-align: center;
+    margin: 30px auto 0;
+    width: fit-content;
+    transition: 0.3s;
+}
+.back-btn:hover {
+    background: #ff4d6a;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    img {
+        max-width: 250px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>👶 Cradle Cap & Dry Skin</h1>
+    <h2>Gentle Care for Your Baby’s Scalp and Skin</h2>
+
+    <img src="{% static 'images/babyc21.jpg' %}" alt="Cradle Cap and Dry Skin">
+
+    <p>Cradle cap and dry skin are common in newborns. While usually harmless, proper care can prevent discomfort and keep your baby’s skin healthy.</p>
+
+    <div class="tip-box">
+        💡 <strong>Cradle Cap Care:</strong>
+        <ul>
+            <li>Apply a small amount of baby oil or coconut oil to the scalp before bath.</li>
+            <li>Gently massage the scalp and loosen flakes with a soft brush or comb.</li>
+            <li>Shampoo with a mild, tear-free baby shampoo to remove excess flakes.</li>
+        </ul>
+    </div>
+
+    <div class="tip-box">
+        🌸 <strong>Dry Skin Care:</strong>
+        <ul>
+            <li>Moisturize your baby’s skin with fragrance-free lotions or creams immediately after bathing.</li>
+            <li>Use lukewarm water instead of hot water for bathing.</li>
+            <li>Avoid harsh soaps or over-bathing, which can worsen dryness.</li>
+        </ul>
+    </div>
+
+    <div class="tip-box">
+        ⚠️ <strong>When to Consult a Pediatrician:</strong>
+        <ul>
+            <li>If redness, swelling, or oozing develops.</li>
+            <li>If flakes are thick, yellow, or persistent despite gentle care.</li>
+            <li>If your baby seems uncomfortable or itchy.</li>
+        </ul>
+    </div>
+
+    <a href="{% url 'baby_care' %}" class="back-btn">⬅ Back to Baby Care Home</a>
+</div>
+
+</body>
+</html>

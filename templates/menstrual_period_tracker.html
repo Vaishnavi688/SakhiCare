@@ -1,0 +1,320 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Period Tracker - SakhiCare</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin:0; padding:0; }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffe6ea, #fff7f7);
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+
+  .tracker-container {
+  display: flex;
+  align-items: center; /* vertically center the image and content */
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+
+  .tracker-image {
+  width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+  /* vertically centered automatically due to align-items: center on parent */
+  }
+
+
+  .tracker-content {
+    flex: 1;
+    text-align: center;
+  }
+
+  h2, h3, h4 { color: #ff6b81; }
+  .tracker-title { margin-bottom: 25px; font-size: 1.7rem; }
+
+  .tracker-inputs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 25px;
+  }
+
+  .tracker-inputs div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tracker-inputs input {
+    padding: 8px 12px;
+    font-size: 1rem;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #ffb3c1;
+  }
+
+  .track-btn {
+    background-color: #ff6b81;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 10px 0;
+  }
+  .track-btn:hover { background-color: #ff4d6a; }
+
+  .calendar-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+  }
+
+  .calendar-month {
+    min-width: 250px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .calendar-month h4 { margin-bottom: 10px; }
+
+  .weekdays, .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+  }
+
+  .calendar-days { gap: 5px; justify-items: center; }
+
+  .day {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0;
+    border-radius: 50%;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .day:hover { transform: scale(1.2); box-shadow: 0 0 5px rgba(0,0,0,0.2); }
+
+  .period { background-color: #ff6b81; color: white; }
+  .ovulation { background-color: #fcd34d; color: white; }
+  .fertile { background-color: #34d399; color: white; }
+  .post { background-color: #c084fc; color: white; }
+
+  .legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 20px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+  }
+  .legend-circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
+  .legend-period { background-color: #ff6b81; }
+  .legend-fertile { background-color: #34d399; }
+  .legend-ovulation { background-color: #fcd34d; }
+  .legend-post { background-color: #c084fc; }
+
+  .note {
+    font-size: 0.9rem;
+    margin-top: 20px;
+    color: #555;
+  }
+
+  .back-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+  }
+
+  .back-btn {
+    background-color: #ff6b81;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .back-btn:hover { background-color: #ff4d6a; }
+
+  @media (max-width: 900px) {
+    .tracker-container { flex-direction: column; align-items: center; }
+    .tracker-image { margin-bottom: 20px; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="tracker-container">
+  <img src="{% static 'images/Menstrualcycle-tracker.jpg' %}" alt="Menstrual Cycle" class="tracker-image">
+
+  <div class="tracker-content">
+    <h2 class="tracker-title">Personalized Period Tracker</h2>
+
+    <div class="tracker-inputs">
+      <div>
+        <p>Last Period Date</p>
+        <input type="date" id="lastPeriod">
+      </div>
+      <div>
+        <p>Period Length</p>
+        <input type="number" id="periodLength" min="1" max="10" value="5">
+        <span>Days</span>
+      </div>
+      <div>
+        <p>Cycle Length</p>
+        <input type="number" id="cycleLength" min="20" max="40" value="28">
+        <span>Days</span>
+      </div>
+    </div>
+
+    <button class="track-btn" onclick="generateTracker()">Track Now</button>
+
+    <h3 id="trackerTitle" style="display:none;">Your Tracker</h3>
+    <div class="calendar-grid" id="calendarGrid"></div>
+
+    <div class="legend">
+      <div class="legend-item"><span class="legend-circle legend-period"></span>Period</div>
+      <div class="legend-item"><span class="legend-circle legend-fertile"></span>Fertile</div>
+      <div class="legend-item"><span class="legend-circle legend-ovulation"></span>Ovulation</div>
+      <div class="legend-item"><span class="legend-circle legend-post"></span>Post Period</div>
+    </div>
+
+    <p class="note">Note: This period tracker is only an estimation. Cycles may vary individually.</p>
+
+    <div class="back-btn-container">
+      <button class="back-btn" onclick="goBack()">← Back to Menstrual Home</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function goBack() { window.location.href = "/menstrual/"; }
+
+function generateTracker() {
+  const lastPeriod = document.getElementById("lastPeriod").value;
+  const periodLength = parseInt(document.getElementById("periodLength").value);
+  const cycleLength = parseInt(document.getElementById("cycleLength").value);
+  if(!lastPeriod){ alert("Enter last period date."); return; }
+
+  const startDate = new Date(lastPeriod);
+  const monthsToShow = 3;
+  const data = [];
+
+  for(let m=0; m<monthsToShow; m++){
+    const monthDate = new Date(startDate);
+    monthDate.setMonth(startDate.getMonth()+m);
+    const year = monthDate.getFullYear();
+    const month = monthDate.getMonth();
+    const daysInMonth = new Date(year, month+1, 0).getDate();
+    const days = [];
+
+    for(let d=1; d<=daysInMonth; d++){
+      const date = new Date(year, month, d);
+      const diffDays = Math.floor((date - startDate)/(1000*60*60*24));
+      let type = "";
+      if(diffDays>=0){
+        const dayInCycle = diffDays % cycleLength;
+        if(dayInCycle < periodLength) type="period";
+        else if(dayInCycle === cycleLength-14) type="ovulation";
+        else if(dayInCycle>=cycleLength-17 && dayInCycle<=cycleLength-11) type="fertile";
+        else if(dayInCycle<cycleLength-17 && dayInCycle>=periodLength) type="post";
+      }
+      days.push({day:d, type});
+    }
+
+    data.push({
+      month: monthDate.toLocaleString("default", {month:"long"}),
+      year,
+      days,
+      startWeekday: new Date(year, month, 1).getDay()
+    });
+  }
+
+  renderCalendar(data);
+}
+
+function renderCalendar(data){
+  const calendarGrid = document.getElementById("calendarGrid");
+  calendarGrid.innerHTML="";
+  document.getElementById("trackerTitle").style.display="block";
+
+  data.forEach(month=>{
+    const monthDiv = document.createElement("div");
+    monthDiv.className="calendar-month";
+
+    const monthHeader = document.createElement("h4");
+    monthHeader.textContent=month.month+" "+month.year;
+    monthDiv.appendChild(monthHeader);
+
+    const weekdays = document.createElement("div");
+    weekdays.className="weekdays";
+    ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].forEach(w=>{
+      const wDiv = document.createElement("div");
+      wDiv.textContent = w;
+      weekdays.appendChild(wDiv);
+    });
+    monthDiv.appendChild(weekdays);
+
+    const daysDiv = document.createElement("div");
+    daysDiv.className="calendar-days";
+    for(let i=0;i<month.startWeekday;i++){
+      const emptyDiv = document.createElement("div");
+      daysDiv.appendChild(emptyDiv);
+    }
+    month.days.forEach(d=>{
+      const dayDiv = document.createElement("div");
+      dayDiv.className="day "+d.type;
+      dayDiv.textContent=d.day;
+      daysDiv.appendChild(dayDiv);
+    });
+
+    monthDiv.appendChild(daysDiv);
+    calendarGrid.appendChild(monthDiv);
+  });
+}
+</script>
+
+</body>
+</html>

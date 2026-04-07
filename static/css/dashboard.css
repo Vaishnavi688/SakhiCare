@@ -1,0 +1,176 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Page wrapper */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff6f91;
+  color: #fff;
+  padding: 10px 40px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+.navbar-links a:hover {
+  opacity: 0.8;
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero-section {
+  background: linear-gradient(to right, #ffe2e9, #fff5f8);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero-text h2 {
+  color: #ff6f91;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+.hero-text p {
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 25px auto;
+}
+.btn-primary {
+  background-color: #ff6f91;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.btn-primary:hover {
+  background-color: #ff4b70;
+}
+
+/* ---------- FEATURES SECTION ---------- */
+/* ---------- FEATURES SECTION ---------- */
+.features-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  width: 300px;
+  min-height: 420px; /* ✅ Ensures all cards have the same height */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 16px rgba(255, 107, 129, 0.3);
+}
+
+.feature-image-placeholder {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature-card h3 {
+  color: #ff6f91;
+  margin: 15px 0 8px 0;
+  font-size: 1.2rem;
+}
+
+.feature-card p {
+  color: #555;
+  font-size: 0.95rem;
+  padding: 0 15px 20px;
+  flex-grow: 1; /* ✅ Makes text area expand evenly across cards */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .feature-card {
+    width: 90%;
+    min-height: auto; /* Allow flexibility on smaller screens */
+  }
+}
+
+/* ---------- FOOTER ---------- */
+.footer-compact {
+  background-color: #ff6f91;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: auto;
+}
+.footer-links-compact {
+  margin-bottom: 10px;
+}
+.footer-links-compact a {
+  color: white;
+  text-decoration: none;
+  margin: 0 8px;
+  font-size: 0.9rem;
+}
+.footer-links-compact span {
+  color: #fff;
+}
+.footer-links-compact a:hover {
+  text-decoration: underline;
+}
+.footer-copyright {
+  font-size: 0.85rem;
+}

@@ -1,0 +1,228 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-Pregnancy Nutrition - SakhiCare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #fff9f9;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 12px 25px;
+    }
+
+    .navbar h1 {
+      color: #ff6b81;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      margin-left: 20px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ff6b81;
+    }
+
+    /* Section */
+    .container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: #ff6b81;
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .intro-section {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      padding: 25px;
+      margin-bottom: 50px;
+    }
+
+    .intro-section img {
+      width: 40%;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+
+    .intro-section div {
+      flex: 1;
+    }
+
+    .intro-section h3 {
+      color: #ff6b81;
+      margin-bottom: 10px;
+    }
+
+    .intro-section p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Tips Grid */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .tip-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .tip-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(255,107,129,0.2);
+    }
+
+    .tip-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .tip-card h4 {
+      color: #ff6b81;
+      margin-bottom: 10px;
+    }
+
+    .tip-card p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .back-btn {
+      display: inline-block;
+      text-decoration: none;
+      background: #ff6b81;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin-top: 40px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #ff4f70;
+    }
+
+    footer {
+      text-align: center;
+      background: #fff;
+      border-top: 1px solid #eee;
+      padding: 20px;
+      color: #666;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .intro-section {
+        flex-direction: column;
+      }
+      .intro-section img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>🥗 SakhiCare Nutrition</h1>
+    <div>
+      <a href="{% url 'dashboard' %}">🏠 Dashboard</a>
+      <a href="{% url 'logout' %}">Logout</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Nutrition for a Healthy Pre-Pregnancy Journey</h2>
+
+    <div class="intro-section">
+      <img src="{% static 'images/pn.png' %}" alt="Healthy Food for Pregnancy">
+      <div>
+        <h3>Fuel Your Body for Fertility & Strength</h3>
+        <p>
+          Preparing for pregnancy starts with nourishing your body. 
+          A balanced diet rich in essential vitamins, minerals, and antioxidants can improve fertility, 
+          regulate hormones, and ensure a healthy conception. Focus on wholesome, natural foods that make you feel energized and confident.
+        </p>
+      </div>
+    </div>
+
+    <!-- Nutrition Tips -->
+    <div class="tips-grid">
+      <div class="tip-card">
+        <img src="{% static 'images/pn1.webp' %}" alt="Folic Acid Foods">
+        <h4>1️⃣ Folic Acid</h4>
+        <p>Eat foods like spinach, lentils, and avocados. Folic acid prevents birth defects and supports early fetal development.</p>
+      </div>
+
+      <div class="tip-card">
+        <img src="{% static 'images/pn2.webp' %}" alt="Iron Foods">
+        <h4>2️⃣ Iron & Protein</h4>
+        <p>Lean meats, beans, and tofu help prevent anemia and boost your energy during conception.</p>
+      </div>
+
+      <div class="tip-card">
+        <img src="{% static 'images/pn3.jpg' %}" alt="Omega 3 Foods">
+        <h4>3️⃣ Omega-3 Fatty Acids</h4>
+        <p>Include flaxseeds, walnuts, and fish oil. They enhance hormone balance and support brain development for your baby.</p>
+      </div>
+
+      <div class="tip-card">
+        <img src="{% static 'images/pn4.jpg' %}" alt="Hydration">
+        <h4>4️⃣ Stay Hydrated</h4>
+        <p>Drink plenty of water and natural fluids. Hydration supports metabolism and hormonal balance.</p>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="{% url 'prepregnancy_home' %}" class="back-btn">← Back to Pre-Pregnancy Home</a>
+
+    </div>
+  </div>
+
+  <footer>
+    © 2025 SakhiCare | Empowering Women’s Health Through Nutrition
+  </footer>
+
+</body>
+</html>

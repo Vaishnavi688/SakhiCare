@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fever & Vaccination | SakhiCare Newborn Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8f9;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #ff6b81;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #ff88a2;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+p {
+    line-height: 1.7;
+    font-size: 1rem;
+    color: #555;
+}
+
+.tip-box {
+    background: #fff0f5;
+    border-left: 5px solid #ff6b81;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+img {
+    display: block;
+    max-width: 350px;
+    width: 100%;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.back-btn {
+    display: block;
+    text-decoration: none;
+    background: #ff6b81;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-align: center;
+    margin: 30px auto 0;
+    width: fit-content;
+    transition: 0.3s;
+}
+.back-btn:hover {
+    background: #ff4d6a;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    img {
+        max-width: 250px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🌡️ Fever & Vaccination</h1>
+    <h2>Handling Mild Fever After Vaccination</h2>
+
+    <img src="{% static 'images/babyc20.jpg' %}" alt="Fever and Vaccination">
+
+    <p>A mild fever after vaccination is common in newborns and infants. It indicates that the immune system is responding. With proper care, your baby can remain comfortable while their body builds protection.</p>
+
+    <div class="tip-box">
+        💡 <strong>Care at Home:</strong>
+        <ul>
+            <li>Keep your baby well-hydrated — offer breast milk or formula frequently.</li>
+            <li>Dress your baby in light clothing and avoid overheating.</li>
+            <li>Monitor your baby’s temperature regularly using a reliable thermometer.</li>
+            <li>Provide comfort and gentle cuddles to soothe your baby.</li>
+        </ul>
+    </div>
+
+    <div class="tip-box">
+        🌸 <strong>When to Contact Your Pediatrician:</strong>
+        <ul>
+            <li>If fever lasts more than 48 hours.</li>
+            <li>If your baby has a temperature above 102°F (38.9°C) or shows signs of unusual discomfort.</li>
+            <li>If there are any other concerning symptoms like rash, persistent vomiting, or lethargy.</li>
+        </ul>
+    </div>
+
+    <div class="tip-box">
+        ⚠️ <strong>Important Notes:</strong>
+        <ul>
+            <li>Fever after vaccination is usually temporary and harmless.</li>
+            <li>Never give medication without consulting your pediatrician.</li>
+            <li>Document any reactions after vaccination to share with your doctor.</li>
+        </ul>
+    </div>
+
+    <a href="{% url 'baby_care' %}" class="back-btn">⬅ Back to Baby Care Home</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - SakhiCare</title>
+  <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+  <style>
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar-left {
+      display: flex;
+      align-items: center;
+    }
+.feature-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px; /* reduced padding */
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 320px; /* set fixed height to reduce box length */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* evenly distribute image and text */
+}
+
+/* Feature images */
+.feature-image {
+    max-height: 150px; /* reduce image height */
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+    .logo-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #ff6b81;
+    }
+
+    .navbar-links {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .navbar-links a {
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #555;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-links a:hover {
+      background-color: #ff6b81;
+      color: #fff;
+    }
+
+.logo-img {
+  width: 40px;       /* adjust size as needed */
+  height: 40px;
+  border-radius: 50%; /* optional: make it circular */
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ff6b81;
+}
+
+  </style>
+</head>
+<body>
+  <div class="home-page">
+
+    <!-- ---------- NAVBAR ---------- -->
+<nav class="navbar">
+  <!-- Left: Logo + Text -->
+  <div class="navbar-left">
+    <img src="{% static 'images/Sakhicare-logo.jpg' %}" alt="SakhiCare Logo" class="logo-img">
+    <h1 class="logo-text">SakhiCare</h1>
+  </div>
+
+  <!-- Right: Links -->
+  <div class="navbar-links">
+    <a href="{% url 'home' %}">🏠 Home</a>
+    <a href="{% url 'about' %}">About Us</a>
+    <a href="{% url 'logout' %}">Logout</a>
+  </div>
+</nav>
+
+
+    <!-- ---------- HERO SECTION ---------- -->
+    <section class="hero-section">
+      <div class="hero-content-container">
+        <div class="hero-text">
+          <h2>Empower Women with Improved Health Access</h2>
+          <p>
+            Our mission is to support women through every stage of their reproductive
+            health journey — from menstrual care to motherhood.
+          </p>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- FEATURES SECTION ---------- -->
+    <section class="features-section">
+      <!-- Menstrual Cycle -->
+     <a href="{% url 'menstrual_home' %}" class="feature-card-link">
+
+       <div class="feature-card">
+         <div class="feature-image-placeholder">
+           <img src="{% static 'images/MenstrualCycle.jpg' %}" alt="Menstrual Cycle" class="feature-image" />
+         </div>
+         <h3>Menstrual Cycle Tracking</h3>
+          <p>Track your cycle, ovulation, and symptoms to understand your body.</p>
+        </div>
+      </a>
+
+      <!-- Pre-Pregnancy -->
+   <a href="{% url 'prepregnancy_home' %}" class="feature-card-link">
+
+        <div class="feature-card">
+          <div class="feature-image-placeholder">
+            <img src="{% static 'images/Prepregnancy2.jpg' %}" alt="Pre Pregnancy" class="feature-image" />
+          </div>
+          <h3>Pre-Pregnancy Guidance</h3>
+          <p>Get nutrition tips and lifestyle guidance to prepare for a healthy pregnancy.</p>
+        </div>
+      </a>
+
+      <!-- Post-Pregnancy -->
+      <a href="{% url 'postpregnancy_home' %}" class="feature-card-link">
+        <div class="feature-card">
+          <div class="feature-image-placeholder">
+            <img src="{% static 'images/Postpregnancy.jpg' %}" alt="Post Pregnancy" class="feature-image" />
+          </div>
+          <h3>Post-Pregnancy Guidance</h3>
+          <p>Support and resources for your recovery and your baby’s wellness.</p>
+        </div>
+      </a>
+    </section>
+
+    <!-- ---------- FOOTER ---------- -->
+    <footer class="footer-compact">
+      <div class="footer-links-compact">
+      
+        <a href="{% url 'privacy_policy' %}">Privacy Policy</a>
+        <span>|</span>
+        <a href="{% url 'terms_of_use' %}">Terms of Use</a>
+        <span>|</span>
+        <a href="{% url 'contact_us' %}">Contact</a>
+        <span>|</span>
+        <a href="{% url 'email_page' %}">Email</a>
+      </div>
+      <p class="footer-copyright">
+        © 2025 SakhiCare. All rights reserved.
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="{% static 'js/dashboard.js' %}"></script>
+</body>
+</html>

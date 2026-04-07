@@ -1,0 +1,237 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-Pregnancy Do’s & Don’ts - SakhiCare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #fff9f9;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 12px 25px;
+    }
+
+    .navbar h1 {
+      color: #ff6b81;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      margin-left: 20px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ff6b81;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: #ff6b81;
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+
+    /* Grid Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 40px;
+    }
+
+    .section {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      padding: 25px;
+      transition: 0.3s;
+    }
+
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(255,107,129,0.25);
+    }
+
+    .section h3 {
+      text-align: center;
+      color: #fff;
+      background: #ff6b81;
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 25px;
+    }
+
+    .tip {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .tip img {
+      width: 90px;
+      height: 90px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .tip p {
+      color: #555;
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    .back-btn {
+      display: inline-block;
+      text-decoration: none;
+      background: #ff6b81;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 10px;
+      margin-top: 40px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #ff4f70;
+    }
+
+    footer {
+      text-align: center;
+      background: #fff;
+      border-top: 1px solid #eee;
+      padding: 20px;
+      color: #666;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .tip {
+        flex-direction: column;
+        text-align: center;
+      }
+      .tip img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>💖 SakhiCare Pre-Pregnancy</h1>
+    <div>
+      <a href="{% url 'dashboard' %}">🏠 Dashboard</a>
+      <a href="{% url 'logout' %}">Logout</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>What To Do & What Not To Do</h2>
+    <p class="subtitle">Your go-to guide for preparing your mind and body for a healthy pregnancy 🌷</p>
+
+    <div class="grid">
+      <!-- ✅ WHAT TO DO -->
+      <div class="section">
+        <h3>✅ What To Do</h3>
+
+        <div class="tip">
+          <img src="{% static 'images/p-nurtition.png' %}" alt="Eat Healthy">
+          <p><b>Eat a Balanced Diet:</b> Include leafy greens, fresh fruits, nuts, and proteins to nourish your body for conception.</p>
+        </div>
+
+        <div class="tip">
+          <img src="{% static 'images/p-yogy.png' %}" alt="Exercise">
+          <p><b>Stay Active:</b> Practice light yoga, walking, or stretching to boost fertility and improve mood.</p>
+        </div>
+
+        <div class="tip">
+          <img src="{% static 'images/p-sleep.png' %}" alt="Sleep">
+          <p><b>Get Enough Sleep:</b> 7–8 hours of deep rest keeps your hormones balanced and mind refreshed.</p>
+        </div>
+
+        <div class="tip">
+          <img src="{% static 'images/p-doctorc.png' %}" alt="Doctor Consultation">
+          <p><b>Consult Your Doctor:</b> Discuss your health, medications, and supplements with your gynecologist.</p>
+        </div>
+
+        <div class="tip">
+          <img src="{% static 'images/p-meditation.png' %}" alt="Meditation">
+          <p><b>Manage Stress:</b> Meditation and mindfulness calm your nerves and prepare you emotionally for motherhood.</p>
+        </div>
+      </div>
+
+      <!-- 🚫 WHAT NOT TO DO -->
+      <div class="section">
+        <h3>🚫 What Not To Do</h3>
+
+        <div class="tip">
+          <img src="{% static 'images/p-nosomke.png' %}" alt="No Smoking">
+          <p><b>Avoid Smoking:</b> Nicotine affects egg quality and increases the risk of complications.</p>
+        </div>
+
+        <div class="tip">
+          <img src="{% static 'images/p-noalcohol.png' %}" alt="No Alcohol">
+          <p><b>Say No to Alcohol:</b> Alcohol disrupts hormones and may affect early embryo development.</p>
+        </div>
+
+        <div class="tip">
+          <img src="{% static 'images/p-avoidstrees.png' %}" alt="Avoid Stress">
+          <p><b>Don’t Overstress:</b> Anxiety and overthinking can disturb your hormonal cycle and delay conception.</p>
+        </div>
+
+        <div class="tip">
+          <img src="{% static 'images/p-avoidjf.png' %}" alt="No Junk Food">
+          <p><b>Cut Down on Junk Food:</b> Greasy, processed foods increase toxins and imbalance your system.</p>
+        </div>
+
+        <div class="tip">
+          <img src="{% static 'images/p-avoidln.png' %}" alt="No Late Nights">
+          <p><b>Avoid Late Nights:</b> Irregular sleep patterns affect ovulation and hormone regulation.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <a href="{% url 'prepregnancy_home' %}" class="back-btn">← Back to Pre-Pregnancy Home</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 SakhiCare | Empowering Women’s Wellness Journey
+  </footer>
+</body>
+</html>

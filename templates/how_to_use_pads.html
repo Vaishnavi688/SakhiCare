@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carefree — How to Use Sanitary Pads | SakhiCare</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fff0f5, #fff7f7);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Container */
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    color: #ff6b81;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+h2 {
+    text-align: center;
+    color: #ff88a2;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+h3 {
+    color: #ff6b81;
+    margin-top: 25px;
+}
+
+/* Paragraphs */
+p {
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #555;
+}
+
+/* Tip boxes */
+.tip {
+    background: #fff6f8;
+    border-left: 4px solid #ff6b81;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 10px 0 20px 0;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* Image */
+img {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+}
+
+/* Carefree Quote Box */
+.quote-box {
+    background: linear-gradient(135deg, #ffe3ec, #fff0f5);
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.quote-box p {
+    color: #ff4d6a;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Back Button */
+.back-btn {
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0;
+    background-color: #ff6b81;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+.back-btn:hover {
+    background-color: #ff4d6a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Carefree — How to Use Sanitary Pads</h1>
+    <h2>💕 Stay Clean. Stay Confident. Be Carefree.</h2>
+
+    <img src="{% static 'images/a.webp' %}" alt="How to Use Sanitary Pads">
+
+    <p>Periods are a natural and powerful part of being a woman — and taking care of yourself during those days helps you feel fresh, comfortable, and confident. Here’s a simple, friendly guide to using sanitary pads safely 🌸</p>
+
+    <h3>🩸 1️⃣ Choose the Right Pad</h3>
+    <p>Select a pad that fits your flow — light, medium, or heavy.<br>
+    During the first 2 days, use a pad with extra absorption or wings to avoid leaks.<br>
+    At night, prefer a long night pad for full protection while you rest.</p>
+    <div class="tip">💡 Tip: Try to keep an extra pad with you when you go out — just in case.</div>
+
+    <h3>🌸 2️⃣ Wash Your Hands</h3>
+    <p>Always wash your hands with soap and water before and after changing your pad.<br>
+    This helps keep you clean and prevents infection.</p>
+
+    <h3>🌼 3️⃣ Unwrap and Place the Pad</h3>
+    <p>Remove the pad from its wrapper gently.<br><br>
+    Peel off the strip to expose the sticky side.<br>
+    Stick the pad firmly in the center of your underwear (the part that touches your body).<br>
+    If it has wings, fold them around the sides to keep the pad in place.</p>
+    <div class="tip">💡 Tip: Make sure the pad fits comfortably — not too front or back.</div>
+
+    <h3>🌷 4️⃣ Change Every 4–6 Hours</h3>
+    <p>Don’t keep the same pad for too long. Change it every 4–6 hours, or sooner if it feels wet or uncomfortable.<br>
+    This prevents rashes, bad odor, and infections.</p>
+    <p>💧 Remember: Clean yourself with tissue or water before putting on a new pad.</p>
+
+    <h3>🌿 5️⃣ Dispose Properly</h3>
+    <p>Wrap the used pad in paper or the wrapper it came in.<br>
+    Always throw it in a dustbin — never flush it in the toilet.<br>
+    If you can, use a sanitary waste bin for safe disposal.</p>
+    <div class="tip">💡 Tip: Wash your hands again after disposing.</div>
+
+    <h3>💖 6️⃣ Stay Fresh and Relax</h3>
+    <p>Wear cotton underwear — it allows your skin to breathe.<br>
+    Drink water, eat fruits, and try light exercises or yoga to ease cramps.<br>
+    Remember, taking care of yourself is not extra — it’s essential.</p>
+
+    <div class="quote-box">
+        <p>💬 “Periods don’t stop you — they remind you how strong and beautiful you truly are.”</p>
+    </div>
+<a href="{% url 'menstrual_carefree' %}" class="back-btn">← Back to Carefree Home</a>
+
+</div>
+
+</body>
+</html>

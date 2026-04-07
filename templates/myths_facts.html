@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carefree — Myths & Facts About Periods | SakhiCare</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fff0f5, #fff7f7);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 950px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #ff6b81;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    text-align: center;
+    color: #ff88a2;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+/* Myth & Fact Cards */
+.card {
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.myth {
+    background: #ffe3e6;
+    border-left: 5px solid #ff4d6a;
+    color: #b3002d;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.fact {
+    background: #e6ffe6;
+    border-left: 5px solid #2e7d32;
+    color: #1b5e20;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Icons */
+.card img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* Quote Box */
+.quote-box {
+    background: linear-gradient(135deg, #ffe3ec, #fff0f5);
+    border-radius: 16px;
+    padding: 25px;
+    margin-top: 50px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.quote-box p {
+    color: #ff4d6a;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Back Button */
+.back-btn {
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0;
+    background-color: #ff6b81;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+.back-btn:hover {
+    background-color: #ff4d6a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card img {
+        width: 30px;
+        height: 30px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Carefree: Common Myths & Facts About Periods</h1>
+    <h2>💬 “Periods are natural, healthy, and nothing to be ashamed of. Let’s bust the myths and embrace the facts!”</h2>
+
+    <!-- Myth & Fact 1 -->
+    <div class="card">
+        <div class="myth">❌ Myth: You shouldn’t wash your hair during periods.</div>
+        <div class="fact">✅ Fact: Washing your hair is completely safe. You can maintain hygiene as usual.</div>
+    </div>
+
+    <!-- Myth & Fact 2 -->
+    <div class="card">
+        <div class="myth">❌ Myth: You shouldn’t take a bath or shower.</div>
+        <div class="fact">✅ Fact: Bathing keeps you fresh and reduces the risk of infection. Warm water can also ease cramps.</div>
+    </div>
+
+    <!-- Myth & Fact 3 -->
+    <div class="card">
+        <div class="myth">❌ Myth: You can’t exercise or play sports.</div>
+        <div class="fact">✅ Fact: Light to moderate exercise can reduce cramps, improve mood, and boost energy. Yoga, walking, and stretching are excellent options.</div>
+    </div>
+
+    <!-- Myth & Fact 4 -->
+    <div class="card">
+        <div class="myth">❌ Myth: Periods are dirty or impure.</div>
+        <div class="fact">✅ Fact: Menstruation is a healthy, natural process — it’s not unhygienic or shameful.</div>
+    </div>
+
+    <!-- Myth & Fact 5 -->
+    <div class="card">
+        <div class="myth">❌ Myth: You shouldn’t eat certain foods (like spicy or sour foods).</div>
+        <div class="fact">✅ Fact: No food is strictly off-limits. Some women prefer to avoid caffeine or very oily foods, but balanced nutrition is important for energy and comfort.</div>
+    </div>
+
+    <!-- Myth & Fact 6 -->
+    <div class="card">
+        <div class="myth">❌ Myth: You can’t enter temples or kitchens during periods.</div>
+        <div class="fact">✅ Fact: Periods do not make you impure. Cultural restrictions are not scientifically necessary. Women can engage in normal activities safely.</div>
+    </div>
+
+    <!-- Myth & Fact 7 -->
+    <div class="card">
+        <div class="myth">❌ Myth: You should hide your period.</div>
+        <div class="fact">✅ Fact: Talking about periods openly is healthy, empowering, and normalizes menstruation for everyone.</div>
+    </div>
+
+    <!-- Carefree Quote -->
+    <div class="quote-box">
+        <p>💖 “Knowledge is power. Break the myths, embrace your cycle, and feel confident every day.”</p>
+    </div>
+
+    <a href="{% url 'menstrual_carefree' %}" class="back-btn">← Back to Carefree Home</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - SakhiCare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Base */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #fef9f0, #ffe5e0);
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Container */
+    .contact-container {
+      max-width: 800px;
+      margin: 50px auto 80px;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    .contact-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .contact-header h1 {
+      font-size: 2.5rem;
+      color: #ff6b81;
+      margin-bottom: 10px;
+    }
+
+    .contact-header p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    /* Form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px 15px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      width: 100%;
+      resize: none;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #ff6b81;
+      box-shadow: 0 0 6px rgba(255,107,129,0.3);
+    }
+
+    .contact-form button {
+      padding: 12px 0;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(45deg, #ff6b81, #ff9472);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255,107,129,0.4);
+    }
+
+    /* Contact Info */
+    .contact-info p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    /* Responsive */
+    @media(max-width: 480px) {
+      .contact-header h1 {
+        font-size: 2rem;
+      }
+
+      .contact-header p, .contact-info p {
+        font-size: 0.95rem;
+      }
+
+      .contact-form input, .contact-form textarea {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-container">
+
+    <!-- Header -->
+    <header class="contact-header">
+      <h1>📞 Contact Us</h1>
+      <p>We’re here to support you — reach out anytime!</p>
+    </header>
+
+    <!-- Contact Form -->
+    <form class="contact-form" id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <p>📍 Address: SakhiCare HQ, Pune, India</p>
+      <p>📧 Email: support@sakhicare.in</p>
+      <p>📱 Phone: +91 98765 43210</p>
+    </div>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const contactForm = document.getElementById('contactForm');
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("Thank you for contacting SakhiCare! We’ll get back soon 💖");
+      // Reset form
+      contactForm.reset();
+    });
+  </script>
+
+</body>
+</html>

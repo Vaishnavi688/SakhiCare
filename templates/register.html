@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - SakhiCare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ---------- GLOBAL ---------- */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff9f6, #ffe4e1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* ---------- CARD CONTAINER ---------- */
+    .register-container {
+      background-color: #fff;
+      width: 400px;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    /* ---------- HEADING ---------- */
+    h2 {
+      font-size: 1.8rem;
+      color: #ff6b81;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    /* ---------- FORM ---------- */
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.8px solid #ddd;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      background-color: #fafafa;
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #ff6b81;
+      box-shadow: 0 0 6px rgba(255, 107, 129, 0.3);
+      background-color: #fff;
+    }
+
+    /* ---------- BUTTON ---------- */
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(45deg, #ff6b81, #ff9472);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(255, 107, 129, 0.4);
+    }
+
+    /* ---------- ERROR MESSAGES ---------- */
+    .errorlist {
+      color: red;
+      font-size: 0.9rem;
+      margin: 0;
+      list-style: none;
+      padding: 0;
+    }
+
+    /* ---------- BOTTOM TEXT ---------- */
+    .bottom-text {
+      margin-top: 15px;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .bottom-text a {
+      color: #ff6b81;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .bottom-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 500px) {
+      .register-container {
+        width: 90%;
+        padding: 30px 20px;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <h2>Create an Account</h2>
+
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+
+      <div>
+        {{ form.username.errors }}
+        <input type="text" name="username" placeholder="Username"
+               value="{{ form.username.value|default_if_none:'' }}" required />
+      </div>
+
+      <div>
+        {{ form.email.errors }}
+        <input type="email" name="email" placeholder="Email"
+               value="{{ form.email.value|default_if_none:'' }}" required />
+      </div>
+
+      <div>
+        {{ form.password1.errors }}
+        <input type="password" name="password1" placeholder="Password" required />
+      </div>
+
+      <div>
+        {{ form.password2.errors }}
+        <input type="password" name="password2" placeholder="Password Confirmation" required />
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <p class="bottom-text">
+      Already have an account? <a href="{% url 'login' %}">Login here.</a>
+    </p>
+  </div>
+</body>
+</html>

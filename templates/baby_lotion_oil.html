@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baby Lotion & Oil | SakhiCare Newborn Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8f9;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #ff6b81;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #ff88a2;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+p {
+    line-height: 1.7;
+    font-size: 1rem;
+    color: #555;
+}
+
+.tip-box {
+    background: #fff0f5;
+    border-left: 5px solid #ff6b81;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+img {
+    display: block;
+    max-width: 350px;
+    width: 100%;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.back-btn {
+    display: block;
+    text-decoration: none;
+    background: #ff6b81;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-align: center;
+    margin: 30px auto 0;
+    width: fit-content;
+    transition: 0.3s;
+}
+.back-btn:hover {
+    background: #ff4d6a;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    img {
+        max-width: 250px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🧴 Baby Lotion & Oil</h1>
+    <h2>Moisturize & Nurture Your Baby’s Delicate Skin</h2>
+
+    <img src="{% static 'images/babyc15.jpg' %}" alt="Baby Lotion & Oil">
+
+    <p>Keeping your baby’s skin soft and hydrated is essential to prevent dryness, rashes, or irritation. Using gentle lotions and oils specifically formulated for newborns helps maintain the natural skin barrier.</p>
+
+    <div class="tip-box">
+        💡 <strong>Choosing the Right Lotion & Oil:</strong>
+        <ul>
+            <li>Use natural oils like coconut, almond, or jojoba for massages.</li>
+            <li>Choose fragrance-free or lightly scented lotions.</li>
+            <li>Avoid alcohol-based or harsh chemical products.</li>
+            <li>Brands like Sebamed Baby, Aveeno Baby, and Himalaya Baby are safe options.</li>
+            <li>Always patch-test on a small skin area before regular use.</li>
+        </ul>
+    </div>
+
+    <div class="tip-box">
+        🌸 <strong>Massage & Moisturizing Tips:</strong>
+        <ul>
+            <li>Gently massage baby’s body for 5–10 minutes after a bath.</li>
+            <li>Focus on elbows, knees, and areas prone to dryness.</li>
+            <li>Apply a thin layer — too much oil can clog pores.</li>
+            <li>Always massage in a warm room to keep your baby comfortable.</li>
+        </ul>
+    </div>
+
+    <div class="tip-box">
+        💧 <strong>Extra Care:</strong>
+        <ul>
+            <li>Moisturize at least once daily, more during cold weather.</li>
+            <li>Ensure hands are clean before applying lotion or oil.</li>
+            <li>Keep products out of reach of children.</li>
+        </ul>
+    </div>
+
+    <a href="{% url 'baby_care' %}" class="back-btn">⬅ Back to Baby Care Home</a>
+</div>
+
+</body>
+</html>
